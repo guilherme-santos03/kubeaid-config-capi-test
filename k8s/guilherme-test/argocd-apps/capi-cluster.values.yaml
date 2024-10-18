@@ -32,12 +32,12 @@ aws:
     replicas: 1
     instanceType: t4g.medium
     ami:
-      id: ami-09d7052173f1960be
+      id: ami-09615cf870bc4ba4d
   machinePools:
     - name: primary
       replicas: 1
       instanceType: t4g.medium
       sshKeyName: guilherme-test
       ami:
-        id: ami-09d7052173f1960be
+        id: ami-09615cf870bc4ba4d
       rootVolumeSize: 35
