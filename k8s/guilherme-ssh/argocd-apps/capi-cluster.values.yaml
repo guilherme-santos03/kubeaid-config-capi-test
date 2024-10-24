@@ -37,7 +37,7 @@ aws:
     - name: primary
       replicas: 1
       instanceType: t4g.medium
-      sshKeyName: guilherme-test
+      sshKeyName: guilherme-ssh
       ami:
         id: ami-09615cf870bc4ba4d
       rootVolumeSize: 35
