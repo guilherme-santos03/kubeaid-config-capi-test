@@ -34,10 +34,25 @@ aws:
     ami:
       id: ami-09615cf870bc4ba4d
   machinePools:
-    - name: primary
-      replicas: 2
+    - name: nodes-guilherme
+      ami: ami-09615cf870bc4ba4d
       instanceType: t4g.medium
+      labels:
+        node.cluster.x-k8s.io/instancegroup: nodes-guilherme
+        node.cluster.x-k8s.io/usage: guilherme
+      replicas: 2
+      rootVolumeSize: 75
       sshKeyName: guilherme-ssh
-      ami:
-        id: ami-09615cf870bc4ba4d
-      rootVolumeSize: 50
+    - name: nodes-guilherme2
+      ami: ami-09615cf870bc4ba4d
+      instanceType: t4g.small
+      labels:
+        node.cluster.x-k8s.io/instancegroup: nodes-guilherme-tainted
+        node.cluster.x-k8s.io/usage: guilherme-tainted
+      replicas: 1
+      rootVolumeSize: 75
+      sshKeyName: guilherme-ssh
+      taints:
+        - key: "dedicated"
+          value: "guilherme-taint"
+          effect: "NoSchedule"
