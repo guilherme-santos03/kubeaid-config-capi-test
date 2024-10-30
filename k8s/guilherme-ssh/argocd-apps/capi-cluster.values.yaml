@@ -54,7 +54,3 @@ aws:
       labels:
         node.cluster.x-k8s.io/instancegroup: nodes-guilherme-tainted
         node.cluster.x-k8s.io/usage: guilherme-tainted
-      taints:
-        - key: "dedicated"
-          value: "guilherme-taint"
-          effect: "NoSchedule"
