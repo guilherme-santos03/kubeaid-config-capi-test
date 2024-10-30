@@ -54,3 +54,13 @@ aws:
       labels:
         node.cluster.x-k8s.io/instancegroup: nodes-guilherme-tainted
         node.cluster.x-k8s.io/usage: guilherme-tainted
+    - name: nodes-guilherme3
+      replicas: 1
+      instanceType: t4g.small
+      sshKeyName: guilherme-ssh
+      ami:
+        id: ami-09615cf870bc4ba4d
+      rootVolumeSize: 75
+      labels:
+        node.cluster.x-k8s.io/instancegroup: nodes-guilherme-tainted2
+        node.cluster.x-k8s.io/usage: guilherme-tainted
