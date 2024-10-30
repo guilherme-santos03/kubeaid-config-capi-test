@@ -45,7 +45,7 @@ aws:
         node.cluster.x-k8s.io/instancegroup: nodes-guilherme
         node.cluster.x-k8s.io/usage: guilherme
     - name: nodes-guilherme3
-      replicas: 1
+      replicas: 3
       instanceType: t4g.small
       sshKeyName: guilherme-ssh
       ami:
