@@ -34,27 +34,29 @@ aws:
     ami:
       id: ami-09615cf870bc4ba4d
   machinePools:
-    - name: nodes-guilherme
-      replicas: 2
-      instanceType: t4g.medium
-      sshKeyName: guilherme-ssh
-      ami:
-        id: ami-09615cf870bc4ba4d
-      rootVolumeSize: 75
-      labels:
-        node.cluster.x-k8s.io/instancegroup: nodes-guilherme
-        node.cluster.x-k8s.io/usage: guilherme
-    - name: nodes-guilherme2
-      replicas: 1
-      instanceType: t4g.small
-      sshKeyName: guilherme-ssh
-      ami:
-        id: ami-09615cf870bc4ba4d
-      rootVolumeSize: 75
-      labels:
-        node.cluster.x-k8s.io/instancegroup: nodes-guilherme-tainted
-        node.cluster.x-k8s.io/usage: guilherme-tainted
-      taints:
-        - key: "dedicated"
-          value: "guilherme-taint"
-          effect: "NoSchedule"
+  - name: nodes-guilherme
+    replicas: 2
+    instanceType: t4g.medium
+    sshKeyName: guilherme-ssh
+    ami:
+      id: ami-09615cf870bc4ba4d
+    rootVolumeSize: 35
+    labels:
+      node.cluster.x-k8s.io/instancegroup: nodes-guilherme
+      node.cluster.x-k8s.io/usage: guilherme
+    taints: []
+  - name: nodes-guilherme2
+    replicas: 1
+    instanceType: t4g.small
+    sshKeyName: guilherme-ssh
+    ami:
+      id: ami-09615cf870bc4ba4d
+    rootVolumeSize: 35
+    labels:
+      node.cluster.x-k8s.io/instancegroup: nodes-guilherme-tainted
+      node.cluster.x-k8s.io/usage: guilherme-tainted
+    taints:
+      - key: dedicated
+        value: guilherme-taint
+        effect: NoSchedule
+        timeadded: null
