@@ -1,4 +1,4 @@
-networkpolicies: "true"
+networkpolicies: "false"
 postgres-operator:
   configAwsOrGcp:
     kube_iam_role: "arn:aws:iam::438423213058:role/k8s-zalando-operator-staging"
