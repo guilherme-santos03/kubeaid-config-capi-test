@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: keycloakx
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: keycloakx
+    server: 'https://kubernetes.default.svc'
+  project: default
+  sources:
+    - repoURL: https://github.com/blackwoodseven/k8id.git
+      path: argocd-helm-charts/keycloakx
+      targetRevision: 0355a5da7a013ae858c4aba4a3037f98c4d97b68
+      helm:
+        valueFiles:
+          - $values/k8s/guilherme-testing/argocd-apps/values-keycloakx.yaml
+    - repoURL: https://github.com/guilherme-santos03/kubeaid-config-capi-test
+      targetRevision: HEAD
+      ref: values
+  syncPolicy:
+    syncOptions:
+    - ApplyOutOfSyncOnly=true
+    - CreateNamespace=true
