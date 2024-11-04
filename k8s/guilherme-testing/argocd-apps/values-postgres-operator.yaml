@@ -1,0 +1,13 @@
+networkpolicies: "true"
+postgres-operator:
+  configAwsOrGcp:
+    kube_iam_role: "arn:aws:iam::438423213058:role/k8s-zalando-operator-staging"
+    wal_s3_bucket: "bw7-k8s-dev-postgres-backup"
+  configLoadBalancer:
+    db_hosted_zone: 'staging.bw7.io'
+  configLogicalBackup:
+    logical_backup_s3_bucket: "bw7-k8s-dev-postgres-backup"
+    logical_backup_docker_image: 'registry.opensource.zalan.do/acid/logical-backup:v1.9.0'
+  configKubernetes:
+    enable_cross_namespace_secret: true
+    pod_environment_configmap:
