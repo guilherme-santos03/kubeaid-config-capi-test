@@ -35,7 +35,7 @@ aws:
       id: ami-09615cf870bc4ba4d
   machinePools:
   - name: nodes-guilherme
-    replicas: 2
+    replicas: 1
     instanceType: t4g.medium
     sshKeyName: guilherme-ssh
     ami:
