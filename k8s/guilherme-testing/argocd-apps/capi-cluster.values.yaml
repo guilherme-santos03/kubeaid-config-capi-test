@@ -35,12 +35,13 @@ aws:
       id: ami-09615cf870bc4ba4d
   machinePools:
   - name: nodes-guilherme
-    replicas: 1
+    replicas: 2
     instanceType: t4g.medium
     sshKeyName: guilherme-ssh
     ami:
       id: ami-09615cf870bc4ba4d
     rootVolumeSize: 35
+    labels: {}
     taints: []
   - name: nodes-guilherme2
     replicas: 1
@@ -49,9 +50,7 @@ aws:
     ami:
       id: ami-09615cf870bc4ba4d
     rootVolumeSize: 35
-    labels:
-      node.cluster.x-k8s.io/instancegroup: nodes-guilherme-tainted
-      node.cluster.x-k8s.io/usage: guilherme-tainted
+    labels: {}
     taints:
       - key: dedicated
         value: guilherme-taint
