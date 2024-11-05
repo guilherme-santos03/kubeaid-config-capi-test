@@ -44,7 +44,7 @@ aws:
     labels: {}
     taints: []
   - name: nodes-guilherme2
-    replicas: 1
+    replicas: 2
     instanceType: t4g.small
     sshKeyName: guilherme-ssh
     ami:
