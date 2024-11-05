@@ -43,8 +43,8 @@ aws:
     rootVolumeSize: 35
     labels: {}
     taints: []
-  - name: nodes-guilherme2
-    replicas: 2
+  - name: nodes-guilherme3
+    replicas: 1
     instanceType: t4g.small
     sshKeyName: guilherme-ssh
     ami:
