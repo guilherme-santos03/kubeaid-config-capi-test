@@ -41,7 +41,7 @@ aws:
       node.cluster.x-k8s.io/usage: guilherme-node-group
     taints: []
   - name: nodes-guilherme2
-    replicas: 1
+    minSize: 0
     instanceType: t4g.small
     sshKeyName: guilherme-ssh
     ami:
