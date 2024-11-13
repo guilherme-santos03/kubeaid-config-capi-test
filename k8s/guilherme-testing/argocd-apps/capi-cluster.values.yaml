@@ -30,7 +30,7 @@ aws:
       id: ami-09615cf870bc4ba4d
   nodeGroups:
   - name: nodes-guilherme
-    replicas: 0
+    replicas: 1
     maxSize: 4
     instanceType: t4g.small
     sshKeyName: guilherme-ssh
@@ -41,7 +41,7 @@ aws:
       node.cluster.x-k8s.io/usage: guilherme-node-group
     taints: []
   - name: nodes-guilherme2
-    replicas: 0
+    replicas: 1
     instanceType: t4g.small
     sshKeyName: guilherme-ssh
     ami:
