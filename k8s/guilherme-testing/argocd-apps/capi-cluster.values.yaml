@@ -30,7 +30,7 @@ aws:
       id: ami-09615cf870bc4ba4d
   nodeGroups:
   - name: nodes-guilherme
-    replicas: 3
+    minSize: 0
     maxSize: 4
     instanceType: t4g.small
     sshKeyName: guilherme-ssh
