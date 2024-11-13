@@ -2,11 +2,6 @@ global:
   clusterName: guilherme-testing
   kubernetes:
     version: v1.31.0
-  clusterAPI:
-    version: v1.8.1
-  capa:
-    version: v2.6.1
-    autoScaler: true
   kubeaid:
     repo: https://github.com/Obmondo/KubeAid
   kubeaidConfig:
@@ -33,17 +28,18 @@ aws:
     instanceType: t4g.medium
     ami:
       id: ami-09615cf870bc4ba4d
-  machinePools:
+  nodeGroups:
   - name: nodes-guilherme
     replicas: 2
-    instanceType: t4g.medium
+    instanceType: t4g.small
     sshKeyName: guilherme-ssh
     ami:
       id: ami-09615cf870bc4ba4d
     rootVolumeSize: 35
-    labels: {}
+    labels:
+      node.cluster.x-k8s.io/usage: guilherme-node-group
     taints: []
-  - name: nodes-guilherme3
+  - name: nodes-guilherme2
     replicas: 1
     instanceType: t4g.small
     sshKeyName: guilherme-ssh
