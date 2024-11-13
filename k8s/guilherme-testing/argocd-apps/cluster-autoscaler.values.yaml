@@ -1,6 +1,6 @@
 cluster-autoscaler:
   cloudProvider: clusterapi
   clusterAPIMode: incluster-incluster
-autoDiscovery:
-  clusterName: guilherme-testing
-  namespace: capi-cluster
+  autoDiscovery:
+    clusterName: guilherme-testing
+    namespace: capi-cluster
