@@ -75,7 +75,6 @@ aws:
         node.cluster.x-k8s.io/nodegroup: general-nodes-a
       taints: []
 
----
     - name: nodes-extract-4xlarge
       replicas: 1
       minSize: 0
