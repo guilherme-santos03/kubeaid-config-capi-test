@@ -74,37 +74,3 @@ aws:
       node-role.kubernetes.io/bootstrapper: ""
       node.cluster.x-k8s.io/nodegroup: general-nodes-a
     taints: []
-
-  - name: secondary
-    replicas: 1
-    minSize: 0
-    maxSize: 2
-    instanceType: t4g.medium
-    sshKeyName: kubeaid-demo
-    ami:
-      id: ami-09615cf870bc4ba4d
-    rootVolumeSize: 35
-    labels:
-      node-role.kubernetes.io/worker: ""
-      node.cluster.x-k8s.io/nodegroup: general-nodes-b
-    taints:
-      - key: "dedicated"
-        value: "fitting"
-        effect: "NoSchedule"
-
-  - name: tertiary
-    replicas: 1
-    minSize: 0
-    maxSize: 2
-    instanceType: t4g.small
-    sshKeyName: kubeaid-demo
-    ami:
-      id: ami-09615cf870bc4ba4d
-    rootVolumeSize: 35
-    labels:
-      node-role.kubernetes.io/worker: ""
-      node.cluster.x-k8s.io/nodegroup: general-nodes-c
-    taints:
-      - key: "dedicated"
-        value: "fitting"
-        effect: "NoSchedule"
