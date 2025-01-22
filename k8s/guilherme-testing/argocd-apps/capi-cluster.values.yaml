@@ -87,4 +87,7 @@ aws:
     labels:
       node-role.kubernetes.io/bootstrapper: ""
       node.cluster.x-k8s.io/nodegroup: general-nodes-b
-    taints: [ "dedicated=fitting:NoSchedule"]
+    taints:
+      - key: "dedicated"
+        value: "fitting"
+        effect: "NoSchedule"
