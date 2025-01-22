@@ -104,4 +104,7 @@ aws:
     labels:
       node-role.kubernetes.io/worker: ""
       node.cluster.x-k8s.io/nodegroup: general-nodes-c
-    taints: []
+    taints:
+      - key: "dedicated"
+        value: "fitting"
+        effect: "NoSchedule"
