@@ -93,7 +93,7 @@ aws:
         effect: "NoSchedule"
 
   - name: tertiary
-    replicas: 0
+    replicas: 1
     minSize: 0
     maxSize: 2
     instanceType: t4g.small
