@@ -66,7 +66,7 @@ aws:
     minSize: 2
     maxSize: 2
     instanceType: t4g.medium
-    sshKeyName: kubeaid-demo
+    sshKeyName: tech-lift-roi-sre
     ami:
       id: ami-09615cf870bc4ba4d
     rootVolumeSize: 35
