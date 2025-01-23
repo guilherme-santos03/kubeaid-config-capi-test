@@ -65,6 +65,20 @@ aws:
     replicas: 2
     minSize: 2
     maxSize: 2
+    instanceType: t4g.medium
+    sshKeyName: tech-lift-roi-sre
+    ami:
+      id: ami-09615cf870bc4ba4d
+    rootVolumeSize: 35
+    labels:
+      node-role.kubernetes.io/worker: ""
+      node.cluster.x-k8s.io/nodegroup: general-nodes-a
+    taints: []
+
+  - name: test
+    replicas: 2
+    minSize: 2
+    maxSize: 2
     instanceType: t4.medium
     sshKeyName: tech-lift-roi-sre
     ami:
@@ -72,5 +86,5 @@ aws:
     rootVolumeSize: 35
     labels:
       node-role.kubernetes.io/worker: ""
-      node.cluster.x-k8s.io/nodegroup: general-nodes-a
+      node.cluster.x-k8s.io/nodegroup: general-nodes-b
     taints: []
