@@ -11,7 +11,7 @@ provider:
 
 aws:
   secretName: cloud-credentials
-  sshKeyName: guilherme-ssh
+  sshKeyName: tech-lift-roi-sre
   region: eu-west-1
   bastion:
     enabled: true
@@ -61,120 +61,16 @@ aws:
                   omitStages:
                     - "RequestReceived"
   nodeGroups:
-    - name: primary
-      replicas: 1
-      minSize: 0
-      maxSize: 2
-      instanceType: t4g.medium
-      sshKeyName: kubeaid-demo
-      ami:
-        id: ami-09615cf870bc4ba4d
-      rootVolumeSize: 35
-      labels:
-        node-role.kubernetes.io/bootstrapper: ""
-        node.cluster.x-k8s.io/nodegroup: general-nodes-a
-      taints: []
-
-### nodes-extract
-    - name: nodes-extract-4xlarge
-      replicas: 1
-      minSize: 0
-      maxSize: 10
-      instanceType: r7i.4xlarge
-      sshKeyName: tech-lift-roi-sre
-      ami:
-        id: ami-09615cf870bc4ba4d
-      rootVolumeSize: 35
-      labels:
-        node-role.kubernetes.io/bootstrapper: ""
-        node.cluster.x-k8s.io/nodegroup: nodes-extract-4xlarge
-      taints:
-        - key: "dedicated"
-          value: "nodes-extract-4xlarge"
-          effect: "NoSchedule"
-
-    - name: nodes-extract-8xlarge
-      replicas: 1
-      minSize: 0
-      maxSize: 10
-      instanceType: r7i.8xlarge
-      sshKeyName: tech-lift-roi-sre
-      ami:
-        id: ami-09615cf870bc4ba4d
-      rootVolumeSize: 35
-      labels:
-        node-role.kubernetes.io/worker: ""
-        node.cluster.x-k8s.io/nodegroup: nodes-extract-8xlarge
-      taints:
-        - key: "dedicated"
-          value: "nodes-extract-8xlarge"
-          effect: "NoSchedule"
-
-    - name: nodes-extract-16xlarge
-      replicas: 1
-      minSize: 0
-      maxSize: 10
-      instanceType: r7i.16xlarge
-      sshKeyName: tech-lift-roi-sre
-      ami:
-        id: ami-09615cf870bc4ba4d
-      rootVolumeSize: 35
-      labels:
-        node-role.kubernetes.io/worker: ""
-        node.cluster.x-k8s.io/nodegroup: nodes-extract-16xlarge
-      taints:
-        - key: "dedicated"
-          value: "nodes-extract-16xlarge"
-          effect: "NoSchedule"
-
-### nodes-fit
-    - name: nodes-fit-4xlarge
-      replicas: 1
-      minSize: 0
-      maxSize: 10
-      instanceType: r7i.4xlarge
-      sshKeyName: tech-lift-roi-sre
-      ami:
-        id: ami-09615cf870bc4ba4d
-      rootVolumeSize: 35
-      labels:
-        node-role.kubernetes.io/bootstrapper: ""
-        node.cluster.x-k8s.io/nodegroup: nodes-fit-4xlarge
-      taints:
-        - key: "dedicated"
-          value: "nodes-fit-4xlarge"
-          effect: "NoSchedule"
-
-    - name: nodes-fit-8xlarge
-      replicas: 1
-      minSize: 0
-      maxSize: 10
-      instanceType: r7i.8xlarge
-      sshKeyName: tech-lift-roi-sre
-      ami:
-        id: ami-09615cf870bc4ba4d
-      rootVolumeSize: 35
-      labels:
-        node-role.kubernetes.io/worker: ""
-        node.cluster.x-k8s.io/nodegroup: nodes-fit-8xlarge
-      taints:
-        - key: "dedicated"
-          value: "nodes-fit-8xlarge"
-          effect: "NoSchedule"
-
-    - name: nodes-fit-16xlarge
-      replicas: 1
-      minSize: 0
-      maxSize: 10
-      instanceType: r7i.16xlarge
-      sshKeyName: tech-lift-roi-sre
-      ami:
-        id: ami-09615cf870bc4ba4d
-      rootVolumeSize: 35
-      labels:
-        node-role.kubernetes.io/worker: ""
-        node.cluster.x-k8s.io/nodegroup: nodes-fit-16xlarge
-      taints:
-        - key: "dedicated"
-          value: "nodes-fit-16xlarge"
-          effect: "NoSchedule"
+  - name: primary
+    replicas: 2
+    minSize: 2
+    maxSize: 2
+    instanceType: t4g.medium
+    sshKeyName: kubeaid-demo
+    ami:
+      id: ami-09615cf870bc4ba4d
+    rootVolumeSize: 35
+    labels:
+      node-role.kubernetes.io/worker: ""
+      node.cluster.x-k8s.io/nodegroup: general-nodes-a
+    taints: []
