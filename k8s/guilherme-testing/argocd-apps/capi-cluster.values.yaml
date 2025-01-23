@@ -65,7 +65,7 @@ aws:
     replicas: 2
     minSize: 2
     maxSize: 2
-    instanceType: t4g.medium
+    instanceType: t4.medium
     sshKeyName: tech-lift-roi-sre
     ami:
       id: ami-0687db497a8e40214
