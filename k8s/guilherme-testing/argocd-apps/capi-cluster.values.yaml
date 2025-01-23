@@ -75,14 +75,14 @@ aws:
       node.cluster.x-k8s.io/nodegroup: general-nodes-a
     taints: []
 
-  - name: amd64-machines
+  - name: amd64-machines-2
     replicas: 1
     minSize: 1
     maxSize: 1
     instanceType: t3a.medium
     sshKeyName: tech-lift-roi-sre
     ami:
-      id: ami-0687db497a8e40214
+      id: ami-06b7bf94d89cf4011
     rootVolumeSize: 35
     labels:
       node-role.kubernetes.io/worker: ""
