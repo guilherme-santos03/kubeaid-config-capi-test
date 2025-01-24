@@ -62,9 +62,9 @@ aws:
                     - "RequestReceived"
   nodeGroups:
   - name: primary
-    replicas: 2
-    minSize: 2
-    maxSize: 2
+    replicas: 1
+    minSize: 0
+    maxSize: 1
     instanceType: t4g.medium
     sshKeyName: tech-lift-roi-sre
     ami:
