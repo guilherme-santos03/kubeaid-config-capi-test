@@ -1,7 +1,7 @@
 global:
   clusterName: guilherme-testing
   kubernetes:
-    version: v1.32.0
+    version: v1.31.0
   kubeaid:
     repo: https://github.com/Obmondo/KubeAid
   kubeaidConfig:
@@ -26,7 +26,7 @@ aws:
     replicas: 3
     instanceType: t4g.medium
     ami:
-      id: ami-0f4b7614aa235bc9d
+      id: ami-09615cf870bc4ba4d
     apiServer: 
       extraArgs:
           audit-log-maxage: "10"
@@ -68,7 +68,7 @@ aws:
     instanceType: t4g.medium
     sshKeyName: tech-lift-roi-sre
     ami:
-      id: ami-0f4b7614aa235bc9d
+      id: ami-09615cf870bc4ba4d
     rootVolumeSize: 35
     labels:
       node-role.kubernetes.io/worker: ""
