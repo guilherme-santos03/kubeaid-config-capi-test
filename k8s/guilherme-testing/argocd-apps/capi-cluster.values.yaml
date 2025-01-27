@@ -26,7 +26,7 @@ aws:
     replicas: 3
     instanceType: t4g.medium
     ami:
-      id: ami-09615cf870bc4ba4d
+      id: ami-0f4b7614aa235bc9d
     apiServer: 
       extraArgs:
           audit-log-maxage: "10"
