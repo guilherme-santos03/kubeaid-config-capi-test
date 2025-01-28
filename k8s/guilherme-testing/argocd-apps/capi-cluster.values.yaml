@@ -78,7 +78,7 @@ aws:
   - name: amd64-nodes
     replicas: 1
     minSize: 1
-    maxSize: 1
+    maxSize: 2
     instanceType: t3.medium
     sshKeyName: tech-lift-roi-sre
     ami:
